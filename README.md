@@ -31,6 +31,7 @@ The following **additional** features are implemented:
 * [x] Implemented fragments, ViewPager, and Fragment Adapter to make clickable tabs that show fragments for Movide Details and Recommended Movies (using the Get Similar Movies API)
 * [x] Used Similar Movies endpoint to show a Recycler View of similar movies within the Movie Details Activity
 * [x] Used Get Details endpoint to show runtime and genres of movies
+* [x] Displayed movie language, release date, vote count, runtime, and genres 
 
 ## Video Walkthrough
 
@@ -41,8 +42,23 @@ https://www.internalfb.com/intern/px/p/1KXDf
 GIF created with [Kap](https://getkap.co/).
 
 ## Notes
+I submitted 25 minutes late because GitHub overwrote my local files, so I reached out to my manager for help understanding where my final code had gone. She helped me figure out that it was in a detached head. After about 2 hours of troubleshooting we couldn't figure out how to import to GitHub without having it revert to my oldest commit (without the work I did on Day #3), so I created this new repo and drag and dropped everything but the Build folder/file.
 
-Describe any challenges encountered while building the app.
+Additionally, the video -> gif converter made a really bad quality gif! If you'd like to see the high quality walkthrough video please visit PixelCloud: https://www.internalfb.com/intern/px/p/1KXDf 
+
+Difficulties:
+• Learning fragment adapters, fragments, and tab layouts (week 3 content)
+• understanding how to inflate a layout on the same activity
+
+Some Bugs I ran into:
+• Bug: I figured out that the reason why my YouTube videos were not playing was because the key in the JSON for the video ID was "key" not "id," figured that out by looking through the resulting Json Array in the debugging console (with a breakpoint)
+• Bug: In MoviesDetailsActivity.java I initially defined context as super.getBaseContext(), which provided me with a context that had nothing to do with the activity I was working in. So, when I did context.startActivity I ran into a bug where the context did not exist for startActivity. A TA explained to me that I should have defined context = this, because I was already using a context to get from MainActivity to MovieDetailsActivity, and therefore should reference that context to get from MovieDetailsActivity to MovieTrailerActivity.
+• bug: placeholder image doesn't load for each poster image, only a singular one in the center
+- tried to resolve with centercrop(), which made it worse
+- checked whether or not the layout width and heights were all okay, they were
+- resolution: had to use Pixel 4 emulator and enable auto-rotate in settings
+• bug: kept reverting to portrait layout despite flipping phone orientation
+- resolution: had to use Pixel 4 emulator and enable auto-rotate in settings
 
 ## Open-source libraries used
 
