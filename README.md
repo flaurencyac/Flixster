@@ -36,7 +36,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 https://www.internalfb.com/intern/px/p/1KXDf 
-<img src='https://www.internalfb.com/intern/px/p/1KXDf' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/flaurencyac/Flixster/blob/main/flixster.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [Kap](https://getkap.co/).
 
