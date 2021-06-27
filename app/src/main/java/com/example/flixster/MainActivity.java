@@ -26,9 +26,8 @@ import java.util.List;
 import okhttp3.Headers;
 
 public class MainActivity extends AppCompatActivity {
-
     public static final String BASE_URL = "https://api.themoviedb.org/3/";
-    public static final String NOW_PLAYING_URL = "https://api.themoviedb.org/3/movie/now_playing?api_key=4a0f75d6faf355d9b99e549328290e4e&language=en-US&page=1";
+    public static final String NOW_PLAYING_URL = "https://api.themoviedb.org/3/movie/now_playing?api_key=";
     public static final String TAG = "MainActivity";
 
     // declared as a member var in order to make making the recycler view easier
@@ -42,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(view);
         RecyclerView rvMovies = binding.rvMovies;
         movies = new ArrayList<>();
+        String movieKey =  getString(R.string.movie_key);
 
         // Create the adapter
         MovieAdapter movieAdapter =  new MovieAdapter(this, movies);
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
         AsyncHttpClient client = new AsyncHttpClient();
         // make get request for movies that are now playing for our client
-        client.get(NOW_PLAYING_URL, new JsonHttpResponseHandler() {
+        client.get(NOW_PLAYING_URL+movieKey, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Headers headers, JSON json) {
                 Log.d(TAG, "onSuccess");
