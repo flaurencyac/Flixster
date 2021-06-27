@@ -21,8 +21,6 @@ import okhttp3.Headers;
 
 public class MovieTrailerActivity extends YouTubeBaseActivity {
 
-    public static final String GOOGLE_API_KEY = "AIzaSyD6iSHNstRdm38UKIyjg1DYXrTeZhVeR-Q";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +32,7 @@ public class MovieTrailerActivity extends YouTubeBaseActivity {
         // resolve the player view from the layout
         YouTubePlayerView playerView = (YouTubePlayerView) findViewById(R.id.player);
 
-        playerView.initialize(GOOGLE_API_KEY, new YouTubePlayer.OnInitializedListener() {
+        playerView.initialize(getString(R.string.google_key), new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider,
                                                 YouTubePlayer youTubePlayer, boolean b) {
