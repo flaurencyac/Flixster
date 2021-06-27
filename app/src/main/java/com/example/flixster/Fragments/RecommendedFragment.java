@@ -32,9 +32,8 @@ import java.util.List;
 import okhttp3.Headers;
 
 public class RecommendedFragment extends Fragment {
-
     public static final String TAG = "RecommendedFragment";
-    public static final String RECOMMENDED_URL = MainActivity.BASE_URL + "movie/%d/similar?api_key=4a0f75d6faf355d9b99e549328290e4e&language=en-US&page=1";
+    public static final String RECOMMENDED_URL = MainActivity.BASE_URL + "movie/%d/similar?api_key=";
     Context context;
 
     // declare the recycler view, movies list, movie id, and adapter
@@ -86,7 +85,7 @@ public class RecommendedFragment extends Fragment {
     // Usage of Get Similar Movies to get the recommended movies via similarity to movie
     public void getRecommendedMovies(int id){
         AsyncHttpClient client  = new AsyncHttpClient();
-        String request = String.format(RECOMMENDED_URL, id);
+        String request = String.format(RECOMMENDED_URL+ getString(R.string.movie_key), id);
         client.get(request, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Headers headers, JSON json) {
