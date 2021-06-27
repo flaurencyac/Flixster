@@ -44,7 +44,7 @@ GIF created with [Kap](https://getkap.co/).
 ## Notes
 I submitted 25 minutes late because GitHub overwrote my local files, so I reached out to my manager for help understanding where my final code had gone. She helped me figure out that it was in a detached head. After about 2 hours of troubleshooting we couldn't figure out how to import to GitHub without having it revert to my oldest commit (without the work I did on Day #3), so I created this new repo and drag and dropped everything but the Build folder/file.
 
-Additionally, the video -> gif converter made a really bad quality gif! If you'd like to see the high quality walkthrough video please visit PixelCloud: https://www.internalfb.com/intern/px/p/1KXDf 
+If you'd like to see the high quality walkthrough video please visit PixelCloud: https://www.internalfb.com/intern/px/p/1KXDf 
 
 Difficulties:
 • Learning fragment adapters, fragments, and tab layouts (week 3 content)
