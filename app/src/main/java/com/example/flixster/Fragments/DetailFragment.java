@@ -35,8 +35,7 @@ import okhttp3.Headers;
 
 // Next step for this fragment class would be to use the ViewBinding library to reduce calls to findViewById
 public class DetailFragment extends Fragment {
-
-    public static final String DETAILS_URL = MainActivity.BASE_URL + "/movie/%d?api_key=4a0f75d6faf355d9b99e549328290e4e&language=en-US&page=1";
+    public static final String DETAILS_URL = MainActivity.BASE_URL + "/movie/%d?api_key=";
     public static final String TAG = "DetailsFragment";
 
 
@@ -87,7 +86,7 @@ public class DetailFragment extends Fragment {
 
         // create client
         AsyncHttpClient client = new AsyncHttpClient();
-        String request = String.format(DETAILS_URL, movie.getId());
+        String request = String.format(DETAILS_URL+getString(R.string.movie_key), movie.getId());
         client.get(request, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Headers headers, JSON json) {
